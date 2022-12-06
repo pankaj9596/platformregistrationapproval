@@ -1,0 +1,10 @@
+<mvc:View controllerName="usermanagement.retailersapprovalrequest.controller.FlexibleColumnLayoutView" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.f">
+    <FlexibleColumnLayout stateChange="onStateChange" id="flexibleColumnLayout" backgroundDesign="Solid" layout="{oFiexibleLayout>/layout}">
+        <beginColumnPages>
+            <mvc:XMLView id="Master" viewName="usermanagement.retailersapprovalrequest.view.ApprovalMaster" />
+        </beginColumnPages>
+        <midColumnPages>
+            <mvc:XMLView id="Detail" viewName="usermanagement.retailersapprovalrequest.view.ApprovalDetail" />
+        </midColumnPages>
+    </FlexibleColumnLayout>
+</mvc:View>
