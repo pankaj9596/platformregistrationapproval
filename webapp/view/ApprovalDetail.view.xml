@@ -1,0 +1,75 @@
+<mvc:View controllerName="usermanagement.retailersapprovalrequest.controller.ApprovalDetail" xmlns:layout="sap.ui.layout" xmlns="sap.uxap" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form">
+    <ObjectPageLayout  showTitleInHeaderContent="true" alwaysShowContentHeader="false" preserveHeaderStateOnScroll="false" headerContentPinnable="true" isChildPage="true" upperCaseAnchorBar="false">
+        <headerTitle>
+            <ObjectPageDynamicHeaderTitle>
+                <expandedHeading>
+                    <m:Title text="{oFiexibleLayout>/Name}" wrapping="true" class="sapUiSmallMarginEnd" />
+                </expandedHeading>
+                <navigationActions>
+                    <m:OverflowToolbarButton type="Transparent" icon="sap-icon://full-screen" press="handleFullScreen" id="enterFullScreenBtn" tooltip="Enter Full Screen Mode" />
+                    <m:OverflowToolbarButton type="Transparent" icon="sap-icon://decline" press="handleClose" tooltip="Close middle column" />
+                </navigationActions>
+                <actions>
+                    <m:Button visible="{oVendorMaster>/bEdit}" text="Edit" class="button1 header2" press="onEditScreen" />
+                    <m:Button visible="{oVendorMaster>/bDisplay}" text="Display" class="button1 header2" press="onDisplayScreen" />
+                </actions>
+            </ObjectPageDynamicHeaderTitle>
+        </headerTitle>
+ 
+        <sections>
+            <ObjectPageSection title="{i18n>BasicInformation}">
+                <subSections>
+                    <ObjectPageSubSection>
+                        <blocks>
+                           <core:Fragment fragmentName="usermanagement.retailersapprovalrequest.view.subView.DetailsScreen.BasicInformation" type="XML" />
+                        </blocks>
+                        <!-- <actions>
+                            <m:Button icon="sap-icon://edit" press="onNavToBasicInfo" />
+                        </actions> -->
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+
+            <ObjectPageSection title="{i18n>RetailersInformation}">
+                <subSections>
+                    <ObjectPageSubSection>
+                        <blocks>
+                         <core:Fragment fragmentName="usermanagement.retailersapprovalrequest.view.subView.DetailsScreen.RetailersInformation" type="XML" />  
+                        </blocks>
+ 
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+
+            <ObjectPageSection title="{i18n>ContactInformation}">
+                <subSections>
+                    <ObjectPageSubSection>
+                        <blocks>
+                          <core:Fragment fragmentName="usermanagement.retailersapprovalrequest.view.subView.DetailsScreen.ContactInformation" type="XML" />   
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+
+            <ObjectPageSection title="{i18n>Address}">
+                <subSections>
+                    <ObjectPageSubSection>
+                        <blocks>
+                         <core:Fragment fragmentName="usermanagement.retailersapprovalrequest.view.subView.DetailsScreen.Address" type="XML" />  
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+
+            <ObjectPageSection title="{i18n>OtherInformation}">
+                <subSections>
+                    <ObjectPageSubSection>
+                        <blocks>
+                    <core:Fragment fragmentName="usermanagement.retailersapprovalrequest.view.subView.DetailsScreen.OtherInformation" type="XML" />       
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+        </sections>
+    </ObjectPageLayout>
+</mvc:View>
