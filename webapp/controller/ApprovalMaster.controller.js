@@ -19,43 +19,6 @@ sap.ui.define([
             formatter:formatter,
             onInit: function () {
                 var oModel = dataUtil.createJsonModel();
-                // oModel.setData({
-                //     "MasterList": [
-                //         {
-                //             Code: "0001",
-                //             Name: "Unilever",
-                //             Department: "Household",
-                //             PrimaryContact: "John",
-                //             Email: "John@gmail.com",
-                //             Phone: "123456"
-                //         },
-                //         {
-                //             Code: "0002",
-                //             Name: "NTUC",
-                //             Department: "Retail",
-                //             PrimaryContact: "Abhishek",
-                //             Email: "Abhishek@gmail.com",
-                //             Phone: "999999"
-                //         },
-                //         {
-                //             Code: "0003",
-                //             Name: "NUS",
-                //             Department: "Retail",
-                //             PrimaryContact: "Pankaj",
-                //             Email: "Pankaj@gmail.com",
-                //             Phone: "9898999"
-                //         },
-                //         {
-                //             Code: "0004",
-                //             Name: "Gaint",
-                //             Department: "Retail",
-                //             PrimaryContact: "Om",
-                //             Email: "Om@gmail.com",
-                //             Phone: "996790"
-                //         }
-                //     ]
-                // });
-
                 this.getView().setModel(oModel, "oMasterList");
                 this._fnGetMasterList();
 
