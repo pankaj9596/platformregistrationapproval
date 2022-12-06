@@ -1,5 +1,5 @@
 <mvc:View controllerName="usermanagement.retailersapprovalrequest.controller.ApprovalDetail" xmlns:layout="sap.ui.layout" xmlns="sap.uxap" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form">
-    <ObjectPageLayout  showTitleInHeaderContent="true" alwaysShowContentHeader="false" preserveHeaderStateOnScroll="false" headerContentPinnable="true" isChildPage="true" upperCaseAnchorBar="false">
+    <ObjectPageLayout showFooter="true"  showTitleInHeaderContent="true" alwaysShowContentHeader="false" preserveHeaderStateOnScroll="false" headerContentPinnable="true" isChildPage="true" upperCaseAnchorBar="false">
         <headerTitle>
             <ObjectPageDynamicHeaderTitle>
                 <expandedHeading>
@@ -15,7 +15,7 @@
                 </actions>
             </ObjectPageDynamicHeaderTitle>
         </headerTitle>
- 
+
         <sections>
             <ObjectPageSection title="{i18n>BasicInformation}">
                 <subSections>
@@ -71,5 +71,12 @@
                 </subSections>
             </ObjectPageSection>
         </sections>
+               		<footer>
+			<m:OverflowToolbar>
+				<m:ToolbarSpacer />
+				<m:Button type="Accept" text="Accept"/>
+				<m:Button type="Reject" text="Reject"/>
+			</m:OverflowToolbar>
+		</footer>
     </ObjectPageLayout>
 </mvc:View>

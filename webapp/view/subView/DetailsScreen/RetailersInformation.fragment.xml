@@ -4,21 +4,21 @@
             <form:content>
                 <m:VBox>
                     <m:Label text="{i18n>CompanyName}" design="Bold" />
-                    <m:Text text="{registrationViewModel>/retailerReg/0/COMPANY_NAME}" />
+                    <m:Text text="{oFiexibleLayout>/retailerReg/COMPANY_NAME}" />
                     <m:layoutData>
                         <layout:GridData span="XL12 L12 M12 S12" linebreak="true" />
                     </m:layoutData>
                 </m:VBox>
                 <m:VBox>
                     <m:Label text="{i18n>StoreCount}" design="Bold" />
-                    <m:Text text="{registrationViewModel>/retailerReg/0/STORE_COUNT}" />
+                    <m:Text text="{oFiexibleLayout>/retailerReg/STORE_COUNT}" />
                     <m:layoutData>
                         <layout:GridData span="XL12 L12 M12 S12" linebreak="true" />
                     </m:layoutData>
                 </m:VBox>
                 <m:VBox>
                     <m:Label text="{i18n>EmployeeCount}" design="Bold" />
-                    <m:Text text="{registrationViewModel>/retailerReg/0/EMP_COUNT}" />
+                    <m:Text text="{oFiexibleLayout>/retailerReg/EMP_COUNT}" />
                     <m:layoutData>
                         <layout:GridData span="XL12 L12 M12 S12" linebreak="true" />
                     </m:layoutData>
@@ -26,7 +26,7 @@
 
                 <m:VBox>
                     <m:Label text="{i18n>OwnershipType}" design="Bold" />
-                    <m:Text text="{registrationViewModel>/retailerReg/0/OWNERSHIP_TYPE}" />
+                    <m:Text text="{oFiexibleLayout>/retailerReg/OWNERSHIP_TYPE}" />
 
                     <m:layoutData>
                         <layout:GridData span="XL12 L12 M12 S12" />
@@ -35,7 +35,7 @@
 
                 <m:VBox>
                     <m:Label text="{i18n>BusinessCode}" design="Bold" />
-                    <m:Text text="{registrationViewModel>/retailerReg/0/BUSINESS_CODE}" />
+                    <m:Text text="{oFiexibleLayout>/retailerReg/BUSINESS_CODE}" />
 
                     <m:layoutData>
                         <layout:GridData span="XL12 L12 M12 S12" />
@@ -44,21 +44,21 @@
 
                 <m:VBox>
                     <m:Label text="{i18n>NatureOfBusiness}" design="Bold" />
-                    <m:Text text="{registrationViewModel>/retailerReg/0/BUSINESS_DESC}" />
+                    <m:Text text="{oFiexibleLayout>/retailerReg/BUSINESS_DESC}" />
                     <m:layoutData>
                         <layout:GridData span="XL12 L12 M12 S12" />
                     </m:layoutData>
                 </m:VBox>
                 <m:VBox>
                     <m:Label text="{i18n>ConcessionaireSupport}" design="Bold" />
-                    <m:CheckBox selected="{registrationViewModel>/retailerReg/0/CONCESSIONAIRE_SUPPORT}" editable="false" />
+                    <m:CheckBox selected="{parts:[{'oFiexibleLayout>/retailerReg/CONCESSIONAIRE_SUPPORT'}], formatter:'.formatter._getBoolean'}" editable="false" />
                     <m:layoutData>
                         <layout:GridData span="XL12 L12 M12 S12" />
                     </m:layoutData>
                 </m:VBox>
                 <m:VBox>
                     <m:Label text="{i18n>StoreFormat}" design="Bold" />
-                    <m:Text text="{registrationViewModel>/retailerReg/0/STORE_FORMAT}" />
+                    <m:Text text="{oFiexibleLayout>/retailerReg/STORE_FORMAT}" />
 
                     <m:layoutData>
                         <layout:GridData span="XL12 L12 M12 S12" />

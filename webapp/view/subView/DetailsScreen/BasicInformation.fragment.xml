@@ -4,21 +4,21 @@
                                     <form:content>
                                         <m:VBox>
                                             <m:Label text="{i18n>EmailID}" design="Bold" />
-                                            <m:Text text="{registrationViewModel>/retailerReg/0/EMAIL_ID}" />
+                                            <m:Text text="{oFiexibleLayout>/retailerReg/EMAIL_ID}" />
                                             <m:layoutData>
                                                 <layout:GridData span="XL12 L12 M12 S12" linebreak="true" />
                                             </m:layoutData>
                                         </m:VBox>
                                         <m:VBox>
                                             <m:Label text="{i18n>Title}" design="Bold" />
-                                            <m:Text text="{registrationViewModel>/retailerReg/0/TITLESEQID}" />
+                                            <m:Text text="{oFiexibleLayout>/retailerReg/TITLESEQID}" />
                                             <m:layoutData>
                                                 <layout:GridData span="XL12 L12 M12 S12" />
                                             </m:layoutData>
                                         </m:VBox>
                                         <m:VBox>
                                             <m:Label text="{i18n>FirstName}" design="Bold" />
-                                            <m:Text text="{registrationViewModel>/retailerReg/0/FIRST_NAME}" />
+                                            <m:Text text="{oFiexibleLayout>/retailerReg/FIRST_NAME}" />
                                             <m:layoutData>
                                                 <layout:GridData span="XL12 L12 M12 S12" />
                                             </m:layoutData>
@@ -26,21 +26,21 @@
 
                                         <m:VBox>
                                             <m:Label text="{i18n>MiddleName}" design="Bold" />
-                                            <m:Text text="{registrationViewModel>/retailerReg/0/MIDDLE_NAME}" />
+                                            <m:Text text="{oFiexibleLayout>/retailerReg/MIDDLE_NAME}" />
                                             <m:layoutData>
                                                 <layout:GridData span="XL12 L12 M12 S12" linebreak="true" />
                                             </m:layoutData>
                                         </m:VBox>
                                         <m:VBox>
                                             <m:Label text="{i18n>LastName}" design="Bold" />
-                                            <m:Text text="{registrationViewModel>/retailerReg/0/LAST_NAME}" />
+                                            <m:Text text="{oFiexibleLayout>/retailerReg/LAST_NAME}" />
                                             <m:layoutData>
                                                 <layout:GridData span="XL12 L12 M12 S12" />
                                             </m:layoutData>
                                         </m:VBox>
                                         <m:VBox>
                                             <m:Label text="{i18n>RegistrationDate}" design="Bold" />
-                                            <m:Text text="{path:'registrationViewModel>/retailerReg/0/REGISTRATION_DATE',type:'sap.ui.model.type.Date',formatOptions:{strictParsing:true,UTC:true,patter:'dd/MM/yyyy'}}" />
+                                            <m:Text text="{path:'oFiexibleLayout>/retailerReg/REGISTRATION_DATE',type:'sap.ui.model.type.Date',formatOptions:{strictParsing:true,UTC:true,patter:'dd/MM/yyyy'}}" />
                                             <m:layoutData>
                                                 <layout:GridData span="XL12 L12 M12 S12" />
                                             </m:layoutData>

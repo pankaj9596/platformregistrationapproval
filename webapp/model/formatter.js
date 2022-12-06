@@ -35,6 +35,14 @@ sap.ui.define([
             }else{
                 return "";
             }
+        },
+
+        _getBoolean:function(sValue){
+            if(sValue === '1'){
+                return true;
+            }else{
+                return false;
+            }
         }
     };
 

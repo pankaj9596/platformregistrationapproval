@@ -26,7 +26,7 @@ sap.ui.define([
             onPress: function (oEvent) {
                 var oSelectedObject = oEvent.getSource().getBindingContext("oMasterList").getObject();
                 var oModel = this.getOwnerComponent().getModel("oFiexibleLayout");
-                oModel.setProperty("/Code", oSelectedObject);
+                oModel.setProperty("/retailerReg", oSelectedObject);
                 oModel.setProperty("/Code", oSelectedObject.Code);
                 oModel.setProperty("/Name", oSelectedObject.Name);
                 oModel.setProperty("/Department", oSelectedObject.Department);

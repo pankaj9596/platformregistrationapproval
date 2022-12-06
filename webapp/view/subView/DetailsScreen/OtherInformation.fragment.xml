@@ -4,21 +4,21 @@
             <form:content>
                 <m:VBox>
                     <m:Label text="{i18n>Website}" design="Bold" />
-                    <m:Text text="{registrationViewModel>/retailerReg/0/WEBSITE}" />
+                    <m:Text text="{oFiexibleLayout>/retailerReg/WEBSITE}" />
                     <m:layoutData>
                         <layout:GridData span="XL12 L12 M12 S12" linebreak="true" />
                     </m:layoutData>
                 </m:VBox>
                 <m:VBox>
                     <m:Label text="{i18n>Remarks}" design="Bold" />
-                    <m:Text text="{registrationViewModel>/retailerReg/0/REMARKS}" />
+                    <m:Text text="{oFiexibleLayout>/retailerReg/REMARKS}" />
                     <m:layoutData>
                         <layout:GridData span="XL12 L12 M12 S12" />
                     </m:layoutData>
                 </m:VBox>
                 <m:VBox>
                     <m:Label text="{i18n>AdditionalInformation}" design="Bold" />
-                    <m:Text text="{registrationViewModel>/retailerReg/0/ADDITIONAL_INFO}" />
+                    <m:Text text="{oFiexibleLayout>/retailerReg/ADDITIONAL_INFO}" />
                     <m:layoutData>
                         <layout:GridData span="XL12 L12 M12 S12" />
                     </m:layoutData>

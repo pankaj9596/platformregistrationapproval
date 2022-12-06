@@ -4,7 +4,7 @@
             <form:content>
                 <m:VBox>
                     <m:Label text="{i18n>PhoneCountryCode}" design="Bold" />
-                    <m:Text text="{registrationViewModel>/retailerReg/0/PH_COUNTRY_CODE}" />
+                    <m:Text text="{oFiexibleLayout>/retailerReg/PH_COUNTRY_CODE}" />
 
                     <m:layoutData>
                         <layout:GridData span="XL12 L12 M12 S12" linebreak="true" />
@@ -12,14 +12,14 @@
                 </m:VBox>
                 <m:VBox>
                     <m:Label text="{i18n>PhoneNo}" design="Bold" />
-                    <m:Text text="{registrationViewModel>/retailerReg/0/PHONE_NUMBER}" />
+                    <m:Text text="{oFiexibleLayout>/retailerReg/PHONE_NUMBER}" />
                     <m:layoutData>
                         <layout:GridData span="XL12 L12 M12 S12" />
                     </m:layoutData>
                 </m:VBox>
                 <m:VBox>
                     <m:Label text="{i18n>AltPhoneCountryCode}" design="Bold" />
-                    <m:Text text="{registrationViewModel>/retailerReg/0/ALT_PH_COUNTRY_CODE}" />
+                    <m:Text text="{oFiexibleLayout>/retailerReg/ALT_PH_COUNTRY_CODE}" />
 
                     <m:layoutData>
                         <layout:GridData span="XL12 L12 M12 S12" />
@@ -27,35 +27,35 @@
                 </m:VBox>
                 <m:VBox>
                     <m:Label text="{i18n>AltPhoneNo}" design="Bold" />
-                    <m:Text text="{registrationViewModel>/retailerReg/0/ALT_PHN_NUMBER}" />
+                    <m:Text text="{oFiexibleLayout>/retailerReg/ALT_PHN_NUMBER}" />
                     <m:layoutData>
                         <layout:GridData span="XL12 L12 M12 S12" />
                     </m:layoutData>
                 </m:VBox>
                 <m:VBox>
                     <m:Label text="{i18n>PrimaryContactName}" design="Bold" />
-                    <m:Text text="{registrationViewModel>/retailerReg/0/LAST_NAME}" />
+                    <m:Text text="{oFiexibleLayout>/retailerReg/LAST_NAME}" />
                     <m:layoutData>
                         <layout:GridData span="XL12 L12 M12 S12" />
                     </m:layoutData>
                 </m:VBox>
                 <m:VBox>
                     <m:Label text="{i18n>AltEmailID}" design="Bold" />
-                    <m:Text text="{registrationViewModel>/retailerReg/0/ALT_EMAIL_ID}" />
+                    <m:Text text="{oFiexibleLayout>/retailerReg/ALT_EMAIL_ID}" />
                     <m:layoutData>
                         <layout:GridData span="XL12 L12 M12 S12" />
                     </m:layoutData>
                 </m:VBox>
                 <m:VBox>
                     <m:Label text="{i18n>FaxNumber}" design="Bold" />
-                    <m:Text text="{registrationViewModel>/retailerReg/0/FAX_NUMBER}" />
+                    <m:Text text="{oFiexibleLayout>/retailerReg/FAX_NUMBER}" />
                     <m:layoutData>
                         <layout:GridData span="XL12 L12 M12 S12" />
                     </m:layoutData>
                 </m:VBox>
                 <m:VBox>
                     <m:Label text="{i18n>TeleFaxNumber}" design="Bold" />
-                    <m:Text text="{registrationViewModel>/retailerReg/0/TELE_FAX_NUMBER}" />
+                    <m:Text text="{oFiexibleLayout>/retailerReg/TELE_FAX_NUMBER}" />
                     <m:layoutData>
                         <layout:GridData span="XL12 L12 M12 S12" />
                     </m:layoutData>
