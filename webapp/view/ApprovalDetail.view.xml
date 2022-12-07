@@ -3,15 +3,15 @@
         <headerTitle>
             <ObjectPageDynamicHeaderTitle>
                 <expandedHeading>
-                    <m:Title text="{oFiexibleLayout>/Name}" wrapping="true" class="sapUiSmallMarginEnd" />
+                    <m:Title text="{oFiexibleLayout>/retailerReg/COMPANY_NAME}" wrapping="true" class="sapUiSmallMarginEnd" />
                 </expandedHeading>
                 <navigationActions>
                     <m:OverflowToolbarButton type="Transparent" icon="sap-icon://full-screen" press="handleFullScreen" id="enterFullScreenBtn" tooltip="Enter Full Screen Mode" />
                     <m:OverflowToolbarButton type="Transparent" icon="sap-icon://decline" press="handleClose" tooltip="Close middle column" />
                 </navigationActions>
                 <actions>
-                    <m:Button visible="{oVendorMaster>/bEdit}" text="Edit" class="button1 header2" press="onEditScreen" />
-                    <m:Button visible="{oVendorMaster>/bDisplay}" text="Display" class="button1 header2" press="onDisplayScreen" />
+                    <!-- <m:Button visible="{oVendorMaster>/bEdit}" text="Edit" class="button1 header2" press="onEditScreen" /> -->
+                    <!-- <m:Button visible="{oVendorMaster>/bDisplay}" text="Display" class="button1 header2" press="onDisplayScreen" /> -->
                 </actions>
             </ObjectPageDynamicHeaderTitle>
         </headerTitle>
@@ -74,8 +74,8 @@
                		<footer>
 			<m:OverflowToolbar>
 				<m:ToolbarSpacer />
-				<m:Button type="Accept" text="Accept"/>
-				<m:Button type="Reject" text="Reject"/>
+				<m:Button type="Accept" text="Accept" press="onApprove($event,'APPROVE')"/>
+				<m:Button type="Reject" text="Reject" press="onApprove($event,'REJECT')"/>
 			</m:OverflowToolbar>
 		</footer>
     </ObjectPageLayout>
