@@ -61,8 +61,8 @@ sap.ui.define([
 								},
 								"resolutionResult": {
 									"applicationType": "SAPUI5",
-									"additionalInformation": "SAPUI5.Component=usermanagement.retailersapprovalrequest",
-									"url": sap.ui.require.toUrl("usermanagement/retailersapprovalrequest")
+									"additionalInformation": "SAPUI5.Component=usermanagement.platformregistrationapproval",
+									"url": sap.ui.require.toUrl("usermanagement/platformregistrationapproval")
 								}
 							}
 						}

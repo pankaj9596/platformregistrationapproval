@@ -3,7 +3,7 @@ sap.ui.define([
 ], function (Opa5) {
 	"use strict";
 
-	return Opa5.extend("usermanagement.retailersapprovalrequest.test.integration.arrangements.Startup", {
+	return Opa5.extend("usermanagement.platformregistrationapproval.test.integration.arrangements.Startup", {
 
 		iStartMyApp: function (oOptionsParameter) {
 			var oOptions = oOptionsParameter || {};
@@ -14,7 +14,7 @@ sap.ui.define([
 			// start the app UI component
 			this.iStartMyUIComponent({
 				componentConfig: {
-					name: "usermanagement.retailersapprovalrequest",
+					name: "usermanagement.platformregistrationapproval",
 					async: true
 				},
 				hash: oOptions.hash,

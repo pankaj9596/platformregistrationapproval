@@ -1,5 +1,5 @@
-<mvc:View controllerName="usermanagement.retailersapprovalrequest.controller.ApprovalDetail" xmlns:layout="sap.ui.layout" xmlns="sap.uxap" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form">
-    <ObjectPageLayout showFooter="true"  showTitleInHeaderContent="true" alwaysShowContentHeader="false" preserveHeaderStateOnScroll="false" headerContentPinnable="true" isChildPage="true" upperCaseAnchorBar="false">
+<mvc:View controllerName="usermanagement.platformregistrationapproval.controller.ApprovalDetail" xmlns:layout="sap.ui.layout" xmlns="sap.uxap" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form">
+    <ObjectPageLayout showFooter="{=${oFiexibleLayout>/retailerReg/STATUS} !== ${i18n>ApprovedStatus}  &amp;&amp; ${oFiexibleLayout>/retailerReg/STATUS} !== ${i18n>RejectedStatus}}"  showTitleInHeaderContent="true" alwaysShowContentHeader="false" preserveHeaderStateOnScroll="false" headerContentPinnable="true" isChildPage="true" upperCaseAnchorBar="false">
         <headerTitle>
             <ObjectPageDynamicHeaderTitle>
                 <expandedHeading>
@@ -21,7 +21,7 @@
                 <subSections>
                     <ObjectPageSubSection>
                         <blocks>
-                           <core:Fragment fragmentName="usermanagement.retailersapprovalrequest.view.subView.DetailsScreen.BasicInformation" type="XML" />
+                           <core:Fragment fragmentName="usermanagement.platformregistrationapproval.view.subView.DetailsScreen.BasicInformation" type="XML" />
                         </blocks>
                         <!-- <actions>
                             <m:Button icon="sap-icon://edit" press="onNavToBasicInfo" />
@@ -34,7 +34,7 @@
                 <subSections>
                     <ObjectPageSubSection>
                         <blocks>
-                         <core:Fragment fragmentName="usermanagement.retailersapprovalrequest.view.subView.DetailsScreen.RetailersInformation" type="XML" />  
+                         <core:Fragment fragmentName="usermanagement.platformregistrationapproval.view.subView.DetailsScreen.RetailersInformation" type="XML" />  
                         </blocks>
  
                     </ObjectPageSubSection>
@@ -45,7 +45,7 @@
                 <subSections>
                     <ObjectPageSubSection>
                         <blocks>
-                          <core:Fragment fragmentName="usermanagement.retailersapprovalrequest.view.subView.DetailsScreen.ContactInformation" type="XML" />   
+                          <core:Fragment fragmentName="usermanagement.platformregistrationapproval.view.subView.DetailsScreen.ContactInformation" type="XML" />   
                         </blocks>
                     </ObjectPageSubSection>
                 </subSections>
@@ -55,7 +55,7 @@
                 <subSections>
                     <ObjectPageSubSection>
                         <blocks>
-                         <core:Fragment fragmentName="usermanagement.retailersapprovalrequest.view.subView.DetailsScreen.Address" type="XML" />  
+                         <core:Fragment fragmentName="usermanagement.platformregistrationapproval.view.subView.DetailsScreen.Address" type="XML" />  
                         </blocks>
                     </ObjectPageSubSection>
                 </subSections>
@@ -65,7 +65,7 @@
                 <subSections>
                     <ObjectPageSubSection>
                         <blocks>
-                    <core:Fragment fragmentName="usermanagement.retailersapprovalrequest.view.subView.DetailsScreen.OtherInformation" type="XML" />       
+                    <core:Fragment fragmentName="usermanagement.platformregistrationapproval.view.subView.DetailsScreen.OtherInformation" type="XML" />       
                         </blocks>
                     </ObjectPageSubSection>
                 </subSections>

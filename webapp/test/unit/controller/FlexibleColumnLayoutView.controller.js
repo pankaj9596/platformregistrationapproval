@@ -1,7 +1,7 @@
 /*global QUnit*/
 
 sap.ui.define([
-	"usermanagement/retailersapprovalrequest/controller/FlexibleColumnLayoutView.controller"
+	"usermanagement/platformregistrationapproval/controller/FlexibleColumnLayoutView.controller"
 ], function (Controller) {
 	"use strict";
 

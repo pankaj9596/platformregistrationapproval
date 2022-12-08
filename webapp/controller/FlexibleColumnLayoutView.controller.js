@@ -9,7 +9,7 @@ sap.ui.define([
     function (Controller,JSONModel,models) {
         "use strict";
 
-        return Controller.extend("usermanagement.retailersapprovalrequest.controller.FlexibleColumnLayoutView", {
+        return Controller.extend("usermanagement.platformregistrationapproval.controller.FlexibleColumnLayoutView", {
             onInit: function () {
                 var oModel = new JSONModel({});
                 oModel.setData({

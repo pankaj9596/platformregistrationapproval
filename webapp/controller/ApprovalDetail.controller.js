@@ -4,15 +4,16 @@ sap.ui.define([
     "../utils/dataUtil",
     "sap/ui/core/Fragment",
     "../model/formatter",
-    "../utils/ajaxutil"
+    "../utils/ajaxutil",
+    "../utils/filterOpEnum"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, JSONModel, dataUtil, Fragment, formatter, ajaxutil) {
+    function (Controller, _JSONModel, dataUtil, _Fragment, formatter, ajaxutil, _filterOpEnum) {
         "use strict";
 
-        return Controller.extend("usermanagement.retailersapprovalrequest.controller.TaskDetail", {
+        return Controller.extend("usermanagement.platformregistrationapproval.controller.TaskDetail", {
             formatter:formatter,
             onInit: function () {
                 var oModel = dataUtil.createJsonModel();
@@ -24,7 +25,7 @@ sap.ui.define([
                 this.oModel = this.getView().getModel("oVendorMaster");
 
             },
-            handleFullScreen: function (oEvent) {
+            handleFullScreen: function (_oEvent) {
                 this.getOwnerComponent().getModel("oFiexibleLayout").setProperty("/Span", "XL6 L6 M8 S12");
                 var bFullScreen = this.getOwnerComponent().getModel("oFiexibleLayout").getProperty("/actionButtonsInfo/midColumn/fullScreen");
                 this.getOwnerComponent().getModel("oFiexibleLayout").setProperty("/actionButtonsInfo/midColumn/fullScreen", !bFullScreen);
@@ -37,19 +38,19 @@ sap.ui.define([
                     this.getOwnerComponent().getModel("oFiexibleLayout").setProperty("/layout", this.getOwnerComponent().getModel("oFiexibleLayout").getProperty("/previousLayout"));
                 }
             },
-            handleClose: function (oEvent) {
+            handleClose: function (_oEvent) {
                 this.getOwnerComponent().getModel("oFiexibleLayout").setProperty("/layout", "OneColumn");
             },
-            onEditScreen: function (oEvent) {
+            onEditScreen: function (_oEvent) {
                 this.oModel.setProperty("/bEdit", false);
                 this.oModel.setProperty("/bDisplay", true);
             },
-            onDisplayScreen: function (oEvent) {
+            onDisplayScreen: function (_oEvent) {
                 this.oModel.setProperty("/bEdit", true);
                 this.oModel.setProperty("/bDisplay", false);
             },
 
-            onApprove: function (oEvent, sAction) {
+            onApprove: function (_oEvent, sAction) {
                 var that = this;
 
                 this.oRejectDialog = new sap.m.Dialog({
@@ -74,16 +75,16 @@ sap.ui.define([
                                 aPayload = [],
                                 oPayload = {},
                                 oParameters = {};
-                            oParameters.error = function (oEvent) {
+                            oParameters.error = function (_oEvent) {
 
                             };
-                            oParameters.success = function (oData) {
-                                
+                            oParameters.success = function (_oData) {
+                                this._fnGetMasterList();
                             }.bind(this);
                             oPayload.ACTION = sAction;
                             oPayload.PFSEQID = that.getOwnerComponent().getModel("oFiexibleLayout").getProperty("/retailerReg/PFSEQID");
-                            // oPayload.REMARKS = sText;
-                            // aPayload.push(oPayload);
+                            oPayload.REMARKS = sText;
+                            aPayload.push(oPayload);
                             if (sText === "") {
                                 sap.ui.getCore().byId("rejectionNote").setValueState("Error");
                                 sap.ui.getCore().byId("rejectionNote").setValueStateText("Please enter remarks");
@@ -91,7 +92,7 @@ sap.ui.define([
                             } else {
                                 sap.ui.getCore().byId("rejectionNote").setValueState("None");
                             }
-                             ajaxutil.fnCreate("platformrequest/action", oParameters, oPayload, false, this);
+                             ajaxutil.fnCreate("platformrequest/action", oParameters, aPayload, false, this);
                             this.oRejectDialog.close();
                             this.oRejectDialog.destroy();
                             this.oRejectDialog = undefined;
@@ -111,7 +112,7 @@ sap.ui.define([
 
                 // Fragment.load({
                 //     id: that.createId("REMARKS"),
-                //     name: "usermanagement.retailersapprovalrequest.fragments.Remarks",
+                //     name: "usermanagement.platformregistrationapproval.fragments.Remarks",
                 //     controller: that
                 // }).then(function (oDialog) {
                 //     oDialog.attachAfterClose(function (oEvent) {
@@ -124,6 +125,20 @@ sap.ui.define([
                 //     that.getView().addDependent(oDialog);
                 //     oDialog.open(oEvent.getSource());
                 // });
-            }
+            },
+            _fnGetMasterList: function () {
+                var oParameters = {},
+                    that =this;
+                // oParameters.filter = "emailID" + filterOpEnum.EQ + sEmail;
+                oParameters.error = function (err) {
+                    MessageBox.error(err.responseJSON.message);
+                    
+                };
+                oParameters.success = function (oData) {
+                    that.getOwnerComponent().getModel("oFiexibleLayout").setProperty("/MasterList",oData);
+                    
+                }.bind(that);
+                ajaxutil.fnRead("platformrequest", oParameters);
+            },
         });
     });

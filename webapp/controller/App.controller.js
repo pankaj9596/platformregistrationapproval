@@ -5,7 +5,7 @@ sap.ui.define(
     function(BaseController) {
       "use strict";
   
-      return BaseController.extend("usermanagement.retailersapprovalrequest.controller.App", {
+      return BaseController.extend("usermanagement.platformregistrationapproval.controller.App", {
         onInit() {
           var oModel = this.getOwnerComponent().getModel("oFiexibleLayout");
           if (sap.ui.Device.system.desktop) {

@@ -7,15 +7,16 @@ sap.ui.define([
     "sap/ui/model/FilterOperator",
     "../utils/dataUtil",
     "../utils/ajaxutil",
-    "../model/formatter"
+    "../model/formatter",
+    "../utils/filterOpEnum"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, JSONModel, Fragment, Sorter, Filter, FilterOperator, dataUtil, ajaxutil, formatter) {
+    function (Controller, JSONModel, Fragment, Sorter, Filter, FilterOperator, dataUtil, ajaxutil, formatter, filterOpEnum) {
         "use strict";
 
-        return Controller.extend("usermanagement.retailersapprovalrequest.controller.TaskMaster", {
+        return Controller.extend("usermanagement.platformregistrationapproval.controller.TaskMaster", {
             formatter:formatter,
             onInit: function () {
                 var oModel = dataUtil.createJsonModel();
@@ -24,15 +25,10 @@ sap.ui.define([
 
             },
             onPress: function (oEvent) {
-                var oSelectedObject = oEvent.getSource().getBindingContext("oMasterList").getObject();
+                // var oSelectedObject = oEvent.getSource().getBindingContext("oMasterList").getObject();
+                var oSelectedObject = oEvent.getSource().getBindingContext("oFiexibleLayout").getObject();
                 var oModel = this.getOwnerComponent().getModel("oFiexibleLayout");
                 oModel.setProperty("/retailerReg", oSelectedObject);
-                oModel.setProperty("/Code", oSelectedObject.Code);
-                oModel.setProperty("/Name", oSelectedObject.Name);
-                oModel.setProperty("/Department", oSelectedObject.Department);
-                oModel.setProperty("/Email", oSelectedObject.Email);
-                oModel.setProperty("/PrimaryContact", oSelectedObject.PrimaryContact);
-                oModel.setProperty("/Phone", oSelectedObject.Phone);
                 this.getOwnerComponent().getModel("oFiexibleLayout").setProperty("/layout", "TwoColumnsMidExpanded");
                 this.getOwnerComponent().getRouter().navTo("TaskDetail", { TaskType: "1" });
             },
@@ -50,7 +46,7 @@ sap.ui.define([
                 var that = this;
                 if (!that._sortDialog) {
                     that._pDialog = Fragment.load({
-                        name: "usermanagement.retailersapprovalrequest.fragments.TableSorting",
+                        name: "usermanagement.platformregistrationapproval.fragments.TableSorting",
                         controller: that
                     }).then(function (oDialog) {
                         that._sortDialog = oDialog;
@@ -67,31 +63,31 @@ sap.ui.define([
                     sQuery = oEvent.getParameter("query");
                 if (sQuery && sQuery.length > 0) {
                     oTableSearchState = [
-                        new Filter("Code", FilterOperator.Contains, sQuery),
-                        new Filter("Name", FilterOperator.Contains, sQuery),
-                        new Filter("Department", FilterOperator.Contains, sQuery),
-                        new Filter("PrimaryContact", FilterOperator.Contains, sQuery),
-                        new Filter("Email", FilterOperator.Contains, sQuery),
-                        new Filter("Phone", FilterOperator.Contains, sQuery)
+                        new Filter("BUSINESS_CODE", FilterOperator.Contains, sQuery),
+                        new Filter("COMPANY_NAME", FilterOperator.Contains, sQuery),
+                        new Filter("PRIMARY_CONTACT_NAME", FilterOperator.Contains, sQuery),
+                        new Filter("EMAIL_ID", FilterOperator.Contains, sQuery),
+                        new Filter("PHONE_NUMBER", FilterOperator.Contains, sQuery)
                     ];
                 }
 
-                this.getView().byId("idMastertable").getBinding("items").filter(oTableSearchState, "Application");
+                this.getView().byId("idMastertable").getBinding("items").filter(new Filter(oTableSearchState, false), "Application");
             },
 
             _fnGetMasterList: function () {
                 var oParameters = {},
                     that =this;
-                    // oParameters.filter = "emailID" + filterOpEnum.EQ + sEmail;
+                    // oParameters.filter = "STATUS" + filterOpEnum.EQ + "PFADMINAPPROVED";
                 oParameters.error = function (err) {
                     MessageBox.error(err.responseJSON.message);
                     
                 };
                 oParameters.success = function (oData) {
-                    that.getView().getModel("oMasterList").setProperty("/MasterList",oData);
+                    // that.getView().getModel("oMasterList").setProperty("/MasterList",oData);
+                    that.getOwnerComponent().getModel("oFiexibleLayout").setProperty("/MasterList",oData);
                     
                 }.bind(that);
                 ajaxutil.fnRead("platformrequest", oParameters);
-            },
+            }
         });
     });

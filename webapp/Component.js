@@ -5,12 +5,12 @@
 sap.ui.define([
         "sap/ui/core/UIComponent",
         "sap/ui/Device",
-        "usermanagement/retailersapprovalrequest/model/models"
+        "usermanagement/platformregistrationapproval/model/models"
     ],
     function (UIComponent, Device, models) {
         "use strict";
 
-        return UIComponent.extend("usermanagement.retailersapprovalrequest.Component", {
+        return UIComponent.extend("usermanagement.platformregistrationapproval.Component", {
             metadata: {
                 manifest: "json"
             },

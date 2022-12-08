@@ -5,7 +5,7 @@ sap.ui.getCore().attachInit(function () {
 	"use strict";
 
 	sap.ui.require([
-		"usermanagement/retailersapprovalrequest/test/unit/AllTests"
+		"usermanagement/platformregistrationapproval/test/unit/AllTests"
 	], function () {
 		QUnit.start();
 	});
